@@ -13,6 +13,8 @@
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; color:var(--ink); background:#0c0c0e; font-family:"Inter",Arial,sans-serif; line-height:1.6; }
+    .cursor-glow { position:fixed; top:0; left:0; z-index:-1; width:460px; height:460px; pointer-events:none; opacity:0; background:radial-gradient(circle,rgba(201,162,77,.15) 0,rgba(201,162,77,.06) 29%,transparent 68%); transform:translate3d(-50%,-50%,0); transition:opacity .25s ease; will-change:transform; }
+    .cursor-glow.active { opacity:1; }
     a { color:inherit; text-decoration:none; }
     .wrap { max-width:1120px; margin:auto; padding:0 28px; }
     header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:#0c0c0e; }
@@ -21,6 +23,12 @@
     nav { display:flex; gap:24px; font-size:.93rem; color:var(--muted); }
     nav a:hover { color:var(--aqua); }
     .hero { min-height:calc(100svh - 72px); display:grid; align-content:center; grid-template-columns:1.5fr .8fr; gap:50px; padding:90px 28px; }
+    .lamp { position:absolute; top:72px; width:88px; height:198px; pointer-events:none; opacity:.9; }
+    .lamp::before { content:""; position:absolute; left:43px; top:0; width:2px; height:96px; background:linear-gradient(#c9a24d,#665027); }
+    .lamp::after { content:""; position:absolute; left:9px; top:90px; width:70px; height:45px; border:2px solid #c9a24d; border-bottom:0; border-radius:70px 70px 0 0; background:linear-gradient(180deg,#17130b,#0c0c0e); box-shadow:0 16px 34px rgba(201,162,77,.13); }
+    .lamp .bulb { position:absolute; z-index:1; top:120px; left:37px; width:15px; height:15px; border-radius:50%; background:#e0be78; box-shadow:0 0 18px 7px rgba(201,162,77,.38); }
+    .lamp-left { left:5vw; }
+    .lamp-right { right:7vw; top:135px; transform:scale(.74); transform-origin:top center; opacity:.7; }
     .eyebrow, .section-label { color:var(--aqua); font:500 .78rem "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase; }
     h1 { max-width:760px; margin:18px 0 24px; font:500 clamp(3.6rem,8.5vw,7.4rem)/.94 "Fraunces",Georgia,serif; letter-spacing:-.055em; }
     h1 em { color:var(--aqua); font-style:italic; }
@@ -59,14 +67,18 @@
     .contact-links a { border-bottom:1px solid var(--dim); padding-bottom:3px; }
     .contact-links a:hover { color:var(--aqua); border-color:var(--aqua); }
     footer { display:flex; justify-content:space-between; gap:16px; padding:25px 0 38px; color:var(--dim); font:.76rem "IBM Plex Mono",monospace; }
-    @media (max-width:720px) { .wrap { padding:0 20px; } .hero { grid-template-columns:1fr; padding:72px 20px; } .availability { align-self:auto; } .section-head { grid-template-columns:1fr; gap:16px; } .projects { grid-template-columns:1fr; } .skills { grid-template-columns:1fr; } section { padding:76px 0; } nav { gap:14px; font-size:.8rem; } .nav .brand { font-size:.85rem; } footer { flex-direction:column; } }
+    @media (prefers-reduced-motion:reduce), (pointer:coarse) { .cursor-glow { display:none; } }
+    @media (max-width:720px) { .wrap { padding:0 20px; } .hero { grid-template-columns:1fr; padding:72px 20px; } .lamp-right { display:none; } .lamp-left { left:auto; right:14px; top:72px; transform:scale(.65); transform-origin:top right; } .availability { align-self:auto; } .section-head { grid-template-columns:1fr; gap:16px; } .projects { grid-template-columns:1fr; } .skills { grid-template-columns:1fr; } section { padding:76px 0; } nav { gap:14px; font-size:.8rem; } .nav .brand { font-size:.85rem; } footer { flex-direction:column; } }
     @media (max-width:430px) { nav a:nth-child(2),nav a:nth-child(3) { display:none; } }
   </style>
 </head>
 <body>
+  <div class="cursor-glow" aria-hidden="true"></div>
   <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="lamp lamp-left" aria-hidden="true"><span class="bulb"></span></div>
+      <div class="lamp lamp-right" aria-hidden="true"><span class="bulb"></span></div>
       <div><div class="eyebrow">Mumbai, India · Available for opportunities</div><h1 id="hero-title">Building useful software, from <em>idea</em> to interface.</h1><p class="intro">I’m Geet Bari, an Information Technology graduate and full-stack developer interested in backend systems, AI integration, and Web3 products.</p><div class="actions"><a class="button" href="#work">View projects</a><a class="button secondary" href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a></div></div>
       <aside class="availability"><strong>Open to junior engineering roles</strong>Full-stack, backend, blockchain/Web3, and AI-integration opportunities.</aside>
     </section>
@@ -81,5 +93,18 @@
     <section class="contact" id="contact"><div class="section-label">04 / Contact</div><h2>Have an interesting problem to solve?</h2><div class="actions"><a class="button" href="mailto:geetbari18@gmail.com">Email me</a></div><div class="contact-links"><a href="https://github.com/GeetBari" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:geetbari18@gmail.com">geetbari18@gmail.com</a></div></section>
     <footer><span>© 2026 Geet Bari</span><span>Designed and built with care.</span></footer></div>
   </main>
+  <script>
+    (() => {
+      if (matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+      const glow = document.querySelector('.cursor-glow');
+      let x = innerWidth / 2, y = innerHeight / 2, frame;
+      const paint = () => { glow.style.transform = `translate3d(${x - 230}px, ${y - 230}px, 0)`; frame = null; };
+      addEventListener('pointermove', event => {
+        x = event.clientX; y = event.clientY; glow.classList.add('active');
+        if (!frame) frame = requestAnimationFrame(paint);
+      }, { passive:true });
+      addEventListener('pointerleave', () => glow.classList.remove('active'));
+    })();
+  </script>
 </body>
 </html>
