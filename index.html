@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Geet Bari is a full-stack and backend developer building practical AI and Web3 products.">
+  <title>Geet Bari — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#edf2f7; --muted:#aab7c6; --dim:#65748a; --navy:#07111f; --surface:#0d1b2d; --line:rgba(220,235,255,.14); --aqua:#72e5d0; --blue:#75aaff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--navy); font-family:"DM Sans",sans-serif; line-height:1.6; }
+    body::before { content:""; position:fixed; inset:0; z-index:-2; background:radial-gradient(circle at 85% 3%,rgba(62,126,197,.25),transparent 28rem),radial-gradient(circle at 12% 35%,rgba(20,151,142,.13),transparent 26rem); }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1120px; margin:auto; padding:0 28px; }
+    header { position:sticky; top:0; z-index:10; border-bottom:1px solid rgba(220,235,255,.08); background:rgba(7,17,31,.85); backdrop-filter:blur(16px); }
+    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { font:500 1rem "DM Mono",monospace; letter-spacing:.06em; color:var(--aqua); }
+    nav { display:flex; gap:24px; font-size:.93rem; color:var(--muted); }
+    nav a:hover { color:var(--aqua); }
+    .hero { min-height:calc(100svh - 72px); display:grid; align-content:center; grid-template-columns:1.5fr .8fr; gap:50px; padding:90px 28px; }
+    .eyebrow, .section-label { color:var(--aqua); font:500 .78rem "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:18px 0 24px; font:600 clamp(3.6rem,8.5vw,7.4rem)/.94 "Playfair Display",serif; letter-spacing:-.055em; }
+    h1 em { color:var(--aqua); font-style:italic; }
+    .intro { max-width:630px; color:var(--muted); font-size:1.15rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 19px; border:1px solid var(--aqua); border-radius:4px; color:#041019; background:var(--aqua); font-weight:700; transition:transform .18s ease,background .18s ease; }
+    .button:hover { transform:translateY(-2px); background:#a0f5e5; }
+    .button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
+    .button.secondary:hover { border-color:var(--aqua); color:var(--aqua); }
+    .availability { align-self:end; border-left:1px solid var(--line); padding:18px 0 18px 24px; color:var(--muted); }
+    .availability strong { display:block; margin-bottom:8px; color:var(--ink); font-size:1.08rem; }
+    main { border-top:1px solid var(--line); }
+    section { padding:104px 0; border-bottom:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:170px 1fr; gap:30px; margin-bottom:42px; }
+    h2 { margin:0; font:600 clamp(2.25rem,5vw,4rem)/1 "Playfair Display",serif; letter-spacing:-.045em; }
+    .about-copy { max-width:710px; margin:0; color:var(--muted); font-size:1.17rem; }
+    .about-copy strong { color:var(--ink); font-weight:600; }
+    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .project { min-height:268px; display:flex; flex-direction:column; padding:27px; border:1px solid var(--line); border-radius:8px; background:linear-gradient(145deg,rgba(22,45,70,.7),rgba(9,23,41,.66)); transition:border-color .2s ease,transform .2s ease,background .2s ease; }
+    .project:hover { transform:translateY(-4px); border-color:rgba(114,229,208,.65); background:rgba(18,47,69,.94); }
+    .project-type { margin-bottom:30px; color:var(--aqua); font:500 .72rem "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+    h3 { margin:0 0 10px; font-size:1.45rem; line-height:1.15; letter-spacing:-.025em; }
+    .project p { margin:0; color:var(--muted); font-size:.96rem; }
+    .project-bottom { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-top:auto; padding-top:24px; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; }
+    .tags span { padding:3px 7px; color:var(--dim); border:1px solid var(--line); border-radius:3px; font:.68rem "DM Mono",monospace; }
+    .external { color:var(--aqua); font-size:.85rem; white-space:nowrap; }
+    .external::after { content:" ↗"; }
+    .skills { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .skill-group { padding-top:15px; border-top:1px solid var(--line); }
+    .skill-group h3 { margin-bottom:14px; color:var(--aqua); font:500 .78rem "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+    .skill-group p { margin:0; color:var(--muted); }
+    .contact { padding:110px 0 74px; }
+    .contact h2 { max-width:680px; font-size:clamp(2.7rem,6vw,5rem); }
+    .contact-links { display:flex; flex-wrap:wrap; gap:22px; margin-top:34px; color:var(--muted); }
+    .contact-links a { border-bottom:1px solid var(--dim); padding-bottom:3px; }
+    .contact-links a:hover { color:var(--aqua); border-color:var(--aqua); }
+    footer { display:flex; justify-content:space-between; gap:16px; padding:25px 0 38px; color:var(--dim); font:.76rem "DM Mono",monospace; }
+    @media (max-width:720px) { .wrap { padding:0 20px; } .hero { grid-template-columns:1fr; padding:72px 20px; } .availability { align-self:auto; } .section-head { grid-template-columns:1fr; gap:16px; } .projects { grid-template-columns:1fr; } .skills { grid-template-columns:1fr; } section { padding:76px 0; } nav { gap:14px; font-size:.8rem; } .nav .brand { font-size:.85rem; } footer { flex-direction:column; } }
+    @media (max-width:430px) { nav a:nth-child(2),nav a:nth-child(3) { display:none; } }
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+  <main id="top">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div><div class="eyebrow">Mumbai, India · Available for opportunities</div><h1 id="hero-title">Building useful software, from <em>idea</em> to interface.</h1><p class="intro">I’m Geet Bari, an Information Technology graduate and full-stack developer interested in backend systems, AI integration, and Web3 products.</p><div class="actions"><a class="button" href="#work">View projects</a><a class="button secondary" href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a></div></div>
+      <aside class="availability"><strong>Open to junior engineering roles</strong>Full-stack, backend, blockchain/Web3, and AI-integration opportunities.</aside>
+    </section>
+    <div class="wrap"><section id="about"><div class="section-head"><div class="section-label">01 / About</div><div><h2>Product-minded engineering.</h2><p class="about-copy">I enjoy turning complex systems into clear, dependable experiences. My work spans <strong>React, Next.js, Node.js, Flask, PostgreSQL, Prisma, Solidity, and Ethers.js</strong>—with a practical focus on building things people can use.</p></div></div></section>
+    <section id="work"><div class="section-head"><div class="section-label">02 / Selected work</div><div><h2>Projects with real technical depth.</h2></div></div><div class="projects">
+      <a class="project" href="https://github.com/GeetBari/VYOMA-Banking-Website" target="_blank" rel="noreferrer"><div class="project-type">Web3 banking</div><h3>Vyoma Bank</h3><p>A full-stack Web3 banking prototype with privacy-conscious KYC, role-based loan approvals, JWT access control, and on-chain event verification.</p><div class="project-bottom"><div class="tags"><span>Next.js</span><span>Solidity</span><span>PostgreSQL</span></div><span class="external">GitHub</span></div></a>
+      <a class="project" href="https://github.com/GeetBari/Credit-Card-Recommendation-System" target="_blank" rel="noreferrer"><div class="project-type">Machine learning</div><h3>Credit Card Recommendation System</h3><p>A recommendation system that matches people to suitable credit cards using income, employment, age, and spending patterns.</p><div class="project-bottom"><div class="tags"><span>React</span><span>Flask</span><span>XGBoost</span></div><span class="external">GitHub</span></div></a>
+      <a class="project" href="https://github.com/GeetBari/PharmaTrace" target="_blank" rel="noreferrer"><div class="project-type">Supply-chain traceability</div><h3>PharmaTrace</h3><p>A blockchain-based pharmaceutical traceability system built around smart contracts, IPFS, and role-based workflows.</p><div class="project-bottom"><div class="tags"><span>TypeScript</span><span>Smart contracts</span><span>IPFS</span></div><span class="external">GitHub</span></div></a>
+      <a class="project" href="https://github.com/GeetBari/iris" target="_blank" rel="noreferrer"><div class="project-type">Local AI assistant</div><h3>Iris</h3><p>A privacy-first Windows voice assistant using Whisper for offline speech recognition and Qwen for local natural-language understanding.</p><div class="project-bottom"><div class="tags"><span>Python</span><span>Whisper</span><span>Qwen</span></div><span class="external">GitHub</span></div></a>
+    </div></section>
+    <section id="skills"><div class="section-head"><div class="section-label">03 / Skills</div><div><h2>Tools I build with.</h2></div></div><div class="skills"><div class="skill-group"><h3>Frontend</h3><p>React, Next.js, TypeScript, JavaScript, HTML, CSS</p></div><div class="skill-group"><h3>Backend & data</h3><p>Node.js, Flask, PostgreSQL, Prisma, REST APIs</p></div><div class="skill-group"><h3>Emerging tech</h3><p>Solidity, Ethers.js, Hardhat, AI integration, LLM evaluation</p></div></div></section>
+    <section class="contact" id="contact"><div class="section-label">04 / Contact</div><h2>Have an interesting problem to solve?</h2><div class="actions"><a class="button" href="mailto:geetbari18@gmail.com">Email me</a></div><div class="contact-links"><a href="https://github.com/GeetBari" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:geetbari18@gmail.com">geetbari18@gmail.com</a></div></section>
+    <footer><span>© 2026 Geet Bari</span><span>Designed and built with care.</span></footer></div>
+  </main>
+</body>
+</html>
