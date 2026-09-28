@@ -23,10 +23,11 @@
     nav { display:flex; gap:24px; font-size:.93rem; color:var(--muted); }
     nav a:hover { color:var(--aqua); }
     .hero { min-height:calc(100svh - 72px); display:grid; align-content:center; grid-template-columns:1.5fr .8fr; gap:50px; padding:90px 28px; }
-    .lamp { position:absolute; top:72px; width:88px; height:198px; pointer-events:none; opacity:.9; }
-    .lamp::before { content:""; position:absolute; left:43px; top:0; width:2px; height:96px; background:linear-gradient(#c9a24d,#665027); }
-    .lamp::after { content:""; position:absolute; left:9px; top:90px; width:70px; height:45px; border:2px solid #c9a24d; border-bottom:0; border-radius:70px 70px 0 0; background:linear-gradient(180deg,#17130b,#0c0c0e); box-shadow:0 16px 34px rgba(201,162,77,.13); }
-    .lamp .bulb { position:absolute; z-index:1; top:120px; left:37px; width:15px; height:15px; border-radius:50%; background:#e0be78; box-shadow:0 0 18px 7px rgba(201,162,77,.38); }
+    .lamp { position:absolute; top:72px; width:88px; height:310px; pointer-events:none; opacity:.96; }
+    .lamp::before { content:""; position:absolute; z-index:3; left:43px; top:0; width:2px; height:96px; background:linear-gradient(#e0be78,#665027); }
+    .lamp::after { content:""; position:absolute; z-index:3; left:9px; top:90px; width:70px; height:45px; border:2px solid #c9a24d; border-bottom:0; border-radius:70px 70px 0 0; background:linear-gradient(180deg,#211b0d,#0c0c0e); box-shadow:0 10px 23px rgba(201,162,77,.18); }
+    .lamp .bulb { position:absolute; z-index:4; top:120px; left:37px; width:15px; height:15px; border-radius:50%; background:#fff1bd; box-shadow:0 0 10px 4px rgba(255,226,145,.9),0 0 32px 13px rgba(201,162,77,.55); }
+    .lamp .light { position:absolute; z-index:1; top:124px; left:-72px; width:232px; height:180px; clip-path:polygon(46% 0,54% 0,100% 100%,0 100%); background:radial-gradient(ellipse at 50% 0,rgba(255,225,144,.42),rgba(201,162,77,.20) 32%,rgba(201,162,77,.06) 60%,transparent 76%); }
     .lamp-left { left:5vw; }
     .lamp-right { right:7vw; top:135px; transform:scale(.74); transform-origin:top center; opacity:.7; }
     .eyebrow, .section-label { color:var(--aqua); font:500 .78rem "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase; }
@@ -77,8 +78,8 @@
   <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
   <main id="top">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="lamp lamp-left" aria-hidden="true"><span class="bulb"></span></div>
-      <div class="lamp lamp-right" aria-hidden="true"><span class="bulb"></span></div>
+      <div class="lamp lamp-left" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
+      <div class="lamp lamp-right" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
       <div><div class="eyebrow">Mumbai, India · Available for opportunities</div><h1 id="hero-title">Building useful software, from <em>idea</em> to interface.</h1><p class="intro">I’m Geet Bari, an Information Technology graduate and full-stack developer interested in backend systems, AI integration, and Web3 products.</p><div class="actions"><a class="button" href="#work">View projects</a><a class="button secondary" href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a></div></div>
       <aside class="availability"><strong>Open to junior engineering roles</strong>Full-stack, backend, blockchain/Web3, and AI-integration opportunities.</aside>
     </section>
