@@ -3,108 +3,249 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Geet Bari is a full-stack and backend developer building practical AI and Web3 products.">
-  <title>Geet Bari — Full-Stack Developer</title>
+  <meta name="description" content="Geet Bari, full-stack and backend developer in Mumbai. Explore Iris, a local Windows voice assistant, other projects, and my resume.">
+  <meta name="theme-color" content="#0c0c0e">
+  <title>Geet Bari — Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#ececee; --muted:#a8a8b0; --dim:#66666e; --navy:#0c0c0e; --surface:#131316; --line:rgba(255,255,255,.09); --aqua:#c9a24d; --blue:#e0be78; }
+    :root { color-scheme:dark; --bg:#0c0c0e; --ink:#ececee; --muted:#aaa9a4; --gold:#c9a24d; --line:#2c2b28; --serif:"Fraunces",Georgia,serif; --mono:"IBM Plex Mono",monospace; }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:#0c0c0e; font-family:"Inter",Arial,sans-serif; line-height:1.6; }
-    .cursor-glow { position:fixed; top:0; left:0; z-index:-1; width:460px; height:460px; pointer-events:none; opacity:0; background:radial-gradient(circle,rgba(201,162,77,.15) 0,rgba(201,162,77,.06) 29%,transparent 68%); transform:translate3d(-50%,-50%,0); transition:opacity .25s ease; will-change:transform; }
-    .cursor-glow.active { opacity:1; }
-    a { color:inherit; text-decoration:none; }
-    .wrap { max-width:1120px; margin:auto; padding:0 28px; }
-    header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:#0c0c0e; }
-    .nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .brand { font:500 1rem "IBM Plex Mono",monospace; letter-spacing:.06em; color:var(--aqua); }
-    nav { display:flex; gap:24px; font-size:.93rem; color:var(--muted); }
-    nav a:hover { color:var(--aqua); }
-    .hero { min-height:calc(100svh - 72px); display:grid; align-content:center; grid-template-columns:1.5fr .8fr; gap:50px; padding:90px 28px; }
-    .lamp { position:absolute; top:72px; width:88px; height:310px; pointer-events:none; opacity:.96; }
+    html { scroll-behavior:smooth; scroll-padding-top:100px; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:"Inter",Arial,sans-serif; line-height:1.65; isolation:isolate; }
+    ::selection { background:var(--gold); color:var(--bg); }
+    a { color:inherit; text-underline-offset:.25em; }
+    button { font:inherit; cursor:pointer; }
+    a,button { -webkit-tap-highlight-color:transparent; }
+    a:focus-visible,button:focus-visible { outline:2px solid #e0be78; outline-offset:5px; }
+    h1,h2,h3,p { margin-top:0; }
+    .wrap { width:min(1120px,100%); margin-inline:auto; padding-inline:28px; }
+    .skip-link { position:fixed; top:8px; left:16px; z-index:30; padding:10px 16px; background:var(--gold); color:var(--bg); transform:translateY(-160%); }
+    .skip-link:focus { transform:translateY(0); }
+    .lighting-layer { position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+    .cursor-glow { position:absolute; top:0; left:0; width:460px; height:460px; pointer-events:none; opacity:0; background:radial-gradient(circle,rgba(201,162,77,.11),rgba(201,162,77,.035) 34%,transparent 68%); transform:translate3d(-500px,-500px,0); transition:opacity .15s ease; }
+    .cursor-glow.active { opacity:1; will-change:transform; }
+    main,footer { position:relative; z-index:1; }
+    header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:var(--bg); }
+    .nav { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font:500 1rem var(--mono); color:var(--gold); letter-spacing:.04em; text-decoration:none; }
+    nav { display:flex; gap:26px; }
+    nav a { display:inline-flex; align-items:center; min-height:44px; color:var(--muted); font-size:.9rem; text-decoration:none; }
+    nav a:hover { color:var(--gold); }
+    .hero-shell { position:relative; overflow:clip; border-bottom:1px solid var(--line); }
+    .hero { min-height:660px; display:grid; grid-template-columns:minmax(0,1fr) 240px; align-items:center; gap:55px; padding-block:125px 88px; }
+    .hero-copy,.availability { position:relative; z-index:2; }
+    .eyebrow,.section-label { color:var(--gold); font:400 .875rem/1.6 var(--mono); }
+    .eyebrow { margin-bottom:24px; }
+    h1 { margin-bottom:22px; font:500 clamp(4.4rem,9vw,7.5rem)/1.08 var(--serif); letter-spacing:-.025em; }
+    h1 em { font-weight:400; color:var(--gold); }
+    .role { margin-bottom:16px; font-size:1.3rem; }
+    .intro { max-width:580px; color:var(--muted); font-size:1.0625rem; }
+    .intro a { color:var(--ink); }
+    .actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:10px 20px; border:1px solid var(--gold); border-radius:3px; background:var(--gold); color:var(--bg); font-size:.9375rem; font-weight:600; text-decoration:none; }
+    .button:hover { background:#e0be78; border-color:#e0be78; }
+    .button.secondary { background:transparent; border-color:#555044; color:var(--ink); }
+    .button.secondary:hover { border-color:var(--gold); color:var(--gold); }
+    .availability { align-self:end; padding:8px 0 8px 20px; border-left:1px solid var(--gold); font-size:.9375rem; color:var(--muted); }
+    .availability strong { display:block; color:var(--ink); font-weight:500; margin-bottom:6px; }
+    .availability p { margin:0; }
+    .lamp { position:absolute; top:0; width:88px; height:310px; pointer-events:none; opacity:.96; }
     .lamp::before { content:""; position:absolute; z-index:3; left:43px; top:0; width:2px; height:96px; background:linear-gradient(#e0be78,#665027); }
-    .lamp::after { content:""; position:absolute; z-index:3; left:9px; top:90px; width:70px; height:45px; border:2px solid #c9a24d; border-bottom:0; border-radius:70px 70px 0 0; background:linear-gradient(180deg,#211b0d,#0c0c0e); box-shadow:0 10px 23px rgba(201,162,77,.18); }
+    .lamp::after { content:""; position:absolute; z-index:3; left:9px; top:90px; width:70px; height:45px; border:2px solid var(--gold); border-bottom:0; border-radius:70px 70px 0 0; background:linear-gradient(#211b0d,var(--bg)); box-shadow:0 10px 23px rgba(201,162,77,.18); }
     .lamp .bulb { position:absolute; z-index:4; top:120px; left:37px; width:15px; height:15px; border-radius:50%; background:#fff1bd; box-shadow:0 0 10px 4px rgba(255,226,145,.9),0 0 32px 13px rgba(201,162,77,.55); }
-    .lamp .light { position:absolute; z-index:1; top:124px; left:-72px; width:232px; height:180px; clip-path:polygon(46% 0,54% 0,100% 100%,0 100%); background:radial-gradient(ellipse at 50% 0,rgba(255,225,144,.42),rgba(201,162,77,.20) 32%,rgba(201,162,77,.06) 60%,transparent 76%); }
-    .lamp-left { left:5vw; }
-    .lamp-right { right:7vw; top:135px; transform:scale(.74); transform-origin:top center; opacity:.7; }
-    .eyebrow, .section-label { color:var(--aqua); font:500 .78rem "IBM Plex Mono",monospace; letter-spacing:.14em; text-transform:uppercase; }
-    h1 { max-width:760px; margin:18px 0 24px; font:500 clamp(3.6rem,8.5vw,7.4rem)/.94 "Fraunces",Georgia,serif; letter-spacing:-.055em; }
-    h1 em { color:var(--aqua); font-style:italic; }
-    .intro { max-width:630px; color:var(--muted); font-size:1.15rem; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 19px; border:1px solid var(--aqua); border-radius:4px; color:#041019; background:var(--aqua); font-weight:700; transition:transform .18s ease,background .18s ease; }
-    .button:hover { transform:translateY(-2px); background:#a0f5e5; }
-    .button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
-    .button.secondary:hover { border-color:var(--aqua); color:var(--aqua); }
-    .availability { align-self:end; border-left:1px solid var(--aqua); padding:18px 0 18px 24px; color:var(--muted); }
-    .availability strong { display:block; margin-bottom:8px; color:var(--ink); font-size:1.08rem; }
-    main { border-top:1px solid var(--line); }
-    section { padding:104px 0; border-bottom:1px solid var(--line); }
-    .section-head { display:grid; grid-template-columns:170px 1fr; gap:30px; margin-bottom:42px; }
-    h2 { margin:0; font:500 clamp(2.25rem,5vw,4rem)/1 "Fraunces",serif; letter-spacing:-.045em; }
-    .about-copy { max-width:710px; margin:0; color:var(--muted); font-size:1.17rem; }
-    .about-copy strong { color:var(--ink); font-weight:600; }
-    .projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-    .project { min-height:268px; display:flex; flex-direction:column; padding:27px; border:1px solid var(--line); border-radius:2px; background:#131316; transition:border-color .15s ease,background .15s ease; }
-    .project:hover { border-color:rgba(201,162,77,.75); background:#1a1813; }
-    .project-type { margin-bottom:30px; color:var(--aqua); font:500 .72rem "IBM Plex Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
-    h3 { margin:0 0 10px; font-size:1.45rem; line-height:1.15; letter-spacing:-.025em; }
-    .project p { margin:0; color:var(--muted); font-size:.96rem; }
-    .project-bottom { display:flex; justify-content:space-between; align-items:end; gap:16px; margin-top:auto; padding-top:24px; }
-    .tags { display:flex; flex-wrap:wrap; gap:6px; }
-    .tags span { padding:3px 7px; color:var(--dim); border:1px solid var(--line); border-radius:2px; font:.68rem "IBM Plex Mono",monospace; }
-    .external { color:var(--aqua); font-size:.85rem; white-space:nowrap; }
-    .external::after { content:" ↗"; }
-    .skills { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-    .skill-group { padding-top:15px; border-top:1px solid var(--line); }
-    .skill-group h3 { margin-bottom:14px; color:var(--aqua); font:500 .78rem "IBM Plex Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
-    .skill-group p { margin:0; color:var(--muted); }
-    .contact { padding:110px 0 74px; }
-    .contact h2 { max-width:680px; font-size:clamp(2.7rem,6vw,5rem); }
-    .contact-links { display:flex; flex-wrap:wrap; gap:22px; margin-top:34px; color:var(--muted); }
-    .contact-links a { border-bottom:1px solid var(--dim); padding-bottom:3px; }
-    .contact-links a:hover { color:var(--aqua); border-color:var(--aqua); }
-    footer { display:flex; justify-content:space-between; gap:16px; padding:25px 0 38px; color:var(--dim); font:.76rem "IBM Plex Mono",monospace; }
-    @media (prefers-reduced-motion:reduce), (pointer:coarse) { .cursor-glow { display:none; } }
-    @media (max-width:720px) { .wrap { padding:0 20px; } .hero { grid-template-columns:1fr; padding:72px 20px; } .lamp-right { display:none; } .lamp-left { left:auto; right:14px; top:72px; transform:scale(.65); transform-origin:top right; } .availability { align-self:auto; } .section-head { grid-template-columns:1fr; gap:16px; } .projects { grid-template-columns:1fr; } .skills { grid-template-columns:1fr; } section { padding:76px 0; } nav { gap:14px; font-size:.8rem; } .nav .brand { font-size:.85rem; } footer { flex-direction:column; } }
-    @media (max-width:430px) { nav a:nth-child(2),nav a:nth-child(3) { display:none; } }
+    .lamp .light { position:absolute; top:124px; left:-72px; width:232px; height:180px; clip-path:polygon(46% 0,54% 0,100% 100%,0 100%); background:radial-gradient(ellipse at 50% 0,rgba(255,225,144,.42),rgba(201,162,77,.20) 32%,rgba(201,162,77,.06) 60%,transparent 76%); }
+    .lamp-left { left:max(8px,calc(50% - 670px)); }
+    .lamp-right { right:max(20px,calc(50% - 520px)); top:34px; transform:scale(.8); transform-origin:top center; }
+    .section { padding-block:82px; border-bottom:1px solid var(--line); }
+    .section-head { display:flex; justify-content:space-between; align-items:baseline; gap:24px; margin-bottom:36px; }
+    .section-head .section-label { margin:0; }
+    h2 { margin-bottom:0; font:500 clamp(2rem,4vw,3rem)/1.2 var(--serif); letter-spacing:-.035em; }
+    .iris-feature { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:54px; padding-block:22px 52px; }
+    .project-note { color:var(--gold); font:.8125rem/1.6 var(--mono); margin-bottom:16px; }
+    .iris-title { font:500 3.75rem/1.1 var(--serif); margin-bottom:14px; letter-spacing:-.04em; }
+    .iris-summary { font-size:1.2rem; color:var(--ink); margin-bottom:18px; }
+    .iris-description { color:var(--muted); }
+    .text-links { display:flex; flex-wrap:wrap; gap:12px 24px; margin-top:22px; font-size:.9375rem; }
+    .text-links a { display:inline-flex; align-items:center; min-height:44px; text-decoration-color:#6f6244; }
+    .text-links a:hover { color:var(--gold); }
+    .stack { color:var(--muted); font:.8125rem/1.8 var(--mono); margin:24px 0 0; }
+    .walkthrough { align-self:start; background:#131314; border:1px solid #484030; border-radius:4px; padding:26px; }
+    .walkthrough h4 { margin:0 0 6px; font-size:1rem; font-weight:500; }
+    .demo-disclaimer { font-size:.875rem; color:var(--muted); margin-bottom:20px; }
+    .demo-controls { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .demo-controls button { min-height:44px; border:1px solid #4a4539; border-radius:3px; padding:8px 12px; background:transparent; color:var(--muted); font-size:.875rem; }
+    .demo-controls button[aria-pressed="true"] { background:#302719; border-color:var(--gold); color:#f1d496; }
+    .demo-controls button:hover { border-color:var(--gold); }
+    .demo-result { min-height:17rem; }
+    .demo-label { margin:0 0 8px; color:var(--muted); font:.75rem/1.6 var(--mono); text-transform:uppercase; letter-spacing:.08em; }
+    .demo-command { margin:0 0 24px; font:400 1.35rem/1.5 var(--serif); color:#f5dfb6; }
+    .demo-reply { margin:0 0 22px; font-size:1rem; }
+    .demo-detail { color:var(--muted); font-size:.875rem; margin:0; }
+    .demo-footnote { padding-top:18px; margin:18px 0 0; border-top:1px solid var(--line); color:var(--muted); font-size:.8125rem; }
+    .demo-controls[hidden] { display:none; }
+    .other-work { padding-top:4px; }
+    .project { display:grid; grid-template-columns:70px minmax(0,1fr) 180px; gap:24px; padding:30px 0; border-top:1px solid var(--line); }
+    .project-number { color:var(--gold); font:.875rem/1.6 var(--mono); padding-top:3px; }
+    .project h3 { font-size:1.2rem; font-weight:500; margin-bottom:10px; }
+    .project p { margin:0; max-width:620px; color:var(--muted); }
+    .project .stack { margin-top:14px; font-size:.8125rem; }
+    .project a { align-self:start; justify-self:end; padding-block:4px; text-decoration-color:#6f6244; font-size:.9375rem; }
+    .about-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:70px; }
+    .about-copy { color:var(--muted); font-size:1.0625rem; }
+    .about-copy p:last-child { margin-bottom:0; }
+    .about-facts { margin:0; }
+    .about-facts div+div { margin-top:24px; }
+    .about-facts dt { margin-bottom:6px; font-weight:500; }
+    .about-facts dd { margin:0; color:var(--muted); font-size:.9375rem; }
+    .skills { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+    .skill-group h3 { font-size:1rem; font-weight:500; color:var(--gold); margin-bottom:12px; }
+    .skill-group p { color:var(--muted); margin:0; }
+    .contact { padding-block:78px; }
+    .contact p { color:var(--muted); max-width:600px; margin:22px 0 0; }
+    .contact-email { overflow-wrap:anywhere; }
+    footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; padding-block:28px; border-top:1px solid var(--line); color:var(--muted); font-size:.8125rem; }
+    @media (max-width:1200px) { .lamp-left { display:none; } }
+    @media (max-width:850px) {
+      .hero { grid-template-columns:1fr; gap:35px; padding-block:110px 60px; min-height:auto; }
+      .hero-copy { max-width:620px; }
+      .availability { max-width:360px; }
+      .iris-feature { gap:28px; }
+      .about-grid { gap:32px; }
+      .project { grid-template-columns:38px minmax(0,1fr); gap:16px; }
+      .project>a { grid-column:2; justify-self:start; }
+    }
+    @media (max-width:680px) {
+      .wrap { padding-inline:22px; }
+      .nav { flex-wrap:wrap; gap:0; padding-block:10px; }
+      nav { width:100%; justify-content:space-between; gap:8px; }
+      nav a { font-size:.875rem; }
+      .hero { padding-top:148px; }
+      h1 { font-size:clamp(3.75rem,14vw,5.5rem); }
+      .lamp-right { right:22px; top:0; transform:scale(.6); }
+      .eyebrow { margin-bottom:18px; }
+      .role { font-size:1.1rem; }
+      .intro { font-size:1rem; }
+      .section { padding-block:58px; }
+      .section-head { display:block; margin-bottom:28px; }
+      .section-head .section-label { margin-bottom:12px; }
+      .iris-feature,.about-grid,.skills { grid-template-columns:1fr; gap:28px; }
+      .walkthrough { padding:22px; }
+      .demo-result { min-height:20rem; }
+      .project { grid-template-columns:28px minmax(0,1fr); gap:10px; }
+      .contact { padding-block:58px; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .cursor-glow { display:none; transition:none; } }
+    @media (hover:none), (pointer:coarse) { .cursor-glow { display:none; } }
   </style>
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
-  <main id="top">
-    <section class="hero wrap" aria-labelledby="hero-title">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="lighting-layer" aria-hidden="true"><div class="cursor-glow"></div></div>
+  <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+  <main id="main-content" tabindex="-1">
+    <div class="hero-shell" id="top">
       <div class="lamp lamp-left" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
       <div class="lamp lamp-right" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
-      <div><div class="eyebrow">Mumbai, India · Available for opportunities</div><h1 id="hero-title">Building useful software, from <em>idea</em> to interface.</h1><p class="intro">I’m Geet Bari, an Information Technology graduate and full-stack developer interested in backend systems, AI integration, and Web3 products.</p><div class="actions"><a class="button" href="#work">View projects</a><a class="button secondary" href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a></div></div>
-      <aside class="availability"><strong>Open to junior engineering roles</strong>Full-stack, backend, blockchain/Web3, and AI-integration opportunities.</aside>
-    </section>
-    <div class="wrap"><section id="about"><div class="section-head"><div class="section-label">01 / About</div><div><h2>Product-minded engineering.</h2><p class="about-copy">I enjoy turning complex systems into clear, dependable experiences. My work spans <strong>React, Next.js, Node.js, Flask, PostgreSQL, Prisma, Solidity, and Ethers.js</strong>—with a practical focus on building things people can use.</p></div></div></section>
-    <section id="work"><div class="section-head"><div class="section-label">02 / Selected work</div><div><h2>Projects with real technical depth.</h2></div></div><div class="projects">
-      <a class="project" href="https://github.com/GeetBari/VYOMA-Banking-Website" target="_blank" rel="noreferrer"><div class="project-type">Web3 banking</div><h3>Vyoma Bank</h3><p>A full-stack Web3 banking prototype with privacy-conscious KYC, role-based loan approvals, JWT access control, and on-chain event verification.</p><div class="project-bottom"><div class="tags"><span>Next.js</span><span>Solidity</span><span>PostgreSQL</span></div><span class="external">GitHub</span></div></a>
-      <a class="project" href="https://github.com/GeetBari/Credit-Card-Recommendation-System" target="_blank" rel="noreferrer"><div class="project-type">Machine learning</div><h3>Credit Card Recommendation System</h3><p>A recommendation system that matches people to suitable credit cards using income, employment, age, and spending patterns.</p><div class="project-bottom"><div class="tags"><span>React</span><span>Flask</span><span>XGBoost</span></div><span class="external">GitHub</span></div></a>
-      <a class="project" href="https://github.com/GeetBari/PharmaTrace" target="_blank" rel="noreferrer"><div class="project-type">Supply-chain traceability</div><h3>PharmaTrace</h3><p>A blockchain-based pharmaceutical traceability system built around smart contracts, IPFS, and role-based workflows.</p><div class="project-bottom"><div class="tags"><span>TypeScript</span><span>Smart contracts</span><span>IPFS</span></div><span class="external">GitHub</span></div></a>
-      <a class="project" href="https://github.com/GeetBari/iris" target="_blank" rel="noreferrer"><div class="project-type">Local AI assistant</div><h3>Iris</h3><p>A privacy-first Windows voice assistant using Whisper for offline speech recognition and Qwen for local natural-language understanding.</p><div class="project-bottom"><div class="tags"><span>Python</span><span>Whisper</span><span>Qwen</span></div><span class="external">GitHub</span></div></a>
-    </div></section>
-    <section id="skills"><div class="section-head"><div class="section-label">03 / Skills</div><div><h2>Tools I build with.</h2></div></div><div class="skills"><div class="skill-group"><h3>Frontend</h3><p>React, Next.js, TypeScript, JavaScript, HTML, CSS</p></div><div class="skill-group"><h3>Backend & data</h3><p>Node.js, Flask, PostgreSQL, Prisma, REST APIs</p></div><div class="skill-group"><h3>Emerging tech</h3><p>Solidity, Ethers.js, Hardhat, AI integration, LLM evaluation</p></div></div></section>
-    <section class="contact" id="contact"><div class="section-label">04 / Contact</div><h2>Have an interesting problem to solve?</h2><div class="actions"><a class="button" href="mailto:geetbari18@gmail.com">Email me</a></div><div class="contact-links"><a href="https://github.com/GeetBari" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:geetbari18@gmail.com">geetbari18@gmail.com</a></div></section>
-    <footer><span>© 2026 Geet Bari</span><span>Designed and built with care.</span></footer></div>
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Developer / Mumbai, India</p>
+          <h1 id="hero-title">Geet <em>Bari.</em></h1>
+          <p class="role">Full-stack &amp; backend developer</p>
+          <p class="intro">I build web applications and experiment with local AI. Currently working on <a href="#iris">Iris</a>, a voice assistant for Windows.</p>
+          <div class="actions"><a class="button" href="#work">Explore my work</a><a class="button secondary" href="assets/Geet_Bari_Resume.pdf" download>Download resume (PDF)</a></div>
+        </div>
+        <aside class="availability"><strong>Open to junior developer roles</strong><p>Interested in full-stack, backend, AI integration, and Web3.</p></aside>
+      </section>
+    </div>
+    <div class="wrap">
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="section-head"><p class="section-label">01 / Work</p><h2 id="work-title">Selected projects</h2></div>
+        <article class="iris-feature" id="iris" aria-labelledby="iris-title">
+          <div>
+            <p class="project-note">Featured / In development</p>
+            <h3 class="iris-title" id="iris-title">Iris</h3>
+            <p class="iris-summary">A voice assistant that runs on your Windows PC.</p>
+            <p class="iris-description">Open apps, take notes, set timers, and search the web with a spoken command. Whisper handles speech recognition; Qwen interprets requests locally.</p>
+            <p class="iris-description">Iris maps requests to a limited set of actions. Speech and language processing stay on the computer; web searches still need an internet connection.</p>
+            <p class="stack">Python · Whisper · Qwen · Ollama</p>
+            <div class="text-links"><a href="https://github.com/GeetBari/iris" target="_blank" rel="noopener noreferrer">View source</a><a href="https://github.com/GeetBari/iris#setup-on-another-windows-pc" target="_blank" rel="noopener noreferrer">Setup guide</a></div>
+          </div>
+          <div class="walkthrough" aria-labelledby="demo-title">
+            <h4 id="demo-title">Command walkthrough</h4>
+            <p class="demo-disclaimer">Illustrated examples from Iris. This is a preview, not a running assistant.</p>
+            <div class="demo-controls" role="group" aria-label="Choose an Iris command example" hidden><button type="button" data-example="app" aria-pressed="true" aria-controls="demo-result">Open an app</button><button type="button" data-example="note" aria-pressed="false" aria-controls="demo-result">Take a note</button><button type="button" data-example="timer" aria-pressed="false" aria-controls="demo-result">Set a timer</button></div>
+            <div class="demo-result" id="demo-result" aria-live="polite" aria-atomic="true">
+              <p class="demo-label">You say</p><p class="demo-command" id="demo-command">“Open notepad”</p>
+              <p class="demo-label">Iris responds</p><p class="demo-reply" id="demo-reply">“Opening notepad.”</p>
+              <p class="demo-detail" id="demo-detail">On Windows, Iris launches Notepad through its app-opening action.</p>
+            </div>
+            <p class="demo-footnote">No microphone access or apps are opened by this preview.</p>
+          </div>
+        </article>
+        <div class="other-work">
+          <article class="project"><span class="project-number" aria-hidden="true">02</span><div><h3>Vyoma Bank</h3><p>A hybrid Web2/Web3 banking prototype with off-chain identity records, on-chain KYC hashes, and role-based loan approvals.</p><p class="stack">Next.js · Solidity · Prisma · PostgreSQL</p></div><a href="https://github.com/GeetBari/VYOMA-Banking-Website" target="_blank" rel="noopener noreferrer" aria-label="View Vyoma Bank source">View source</a></article>
+          <article class="project"><span class="project-number" aria-hidden="true">03</span><div><h3>Credit Card Recommendation System</h3><p>Credit-card recommendations based on income and spending behaviour, with a React interface and a Flask API.</p><p class="stack">React · Flask · XGBoost · PostgreSQL</p></div><a href="https://github.com/GeetBari/Credit-Card-Recommendation-System" target="_blank" rel="noopener noreferrer" aria-label="View Credit Card Recommendation System source">View source</a></article>
+          <article class="project"><span class="project-number" aria-hidden="true">04</span><div><h3>PharmaTrace</h3><p>Pharmaceutical traceability using smart contracts, IPFS, and role-based workflows.</p><p class="stack">TypeScript · Smart contracts · IPFS</p></div><a href="https://github.com/GeetBari/PharmaTrace" target="_blank" rel="noopener noreferrer" aria-label="View PharmaTrace source">View source</a></article>
+        </div>
+      </section>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-head"><p class="section-label">02 / About</p><h2 id="about-title">A little about me</h2></div>
+        <div class="about-grid"><div class="about-copy"><p>I’m an Information Technology graduate based in Mumbai. My projects span web development, blockchain, and local AI, from banking workflows to an assistant for everyday tasks.</p><p>Outside software, I play tabla. I completed Tabla Visharad through Gandharva Mahavidyalaya and led a team organising musical events for Revive Fest.</p></div><dl class="about-facts"><div><dt>AI Intern · Prettiflow</dt><dd>Evaluated LLM outputs, supported API testing and integration, and researched models for performance comparisons.</dd></div><div><dt>B.E. Information Technology · 2026</dt><dd>Terna Engineering College, Navi Mumbai</dd></div></dl></div>
+      </section>
+      <section class="section" id="skills" aria-labelledby="skills-title">
+        <div class="section-head"><p class="section-label">03 / Skills</p><h2 id="skills-title">What I work with</h2></div>
+        <div class="skills"><div class="skill-group"><h3>Frontend</h3><p>React, Next.js, TypeScript, JavaScript, HTML, CSS</p></div><div class="skill-group"><h3>Backend &amp; data</h3><p>Node.js, Python, Flask, PostgreSQL, Prisma, REST APIs</p></div><div class="skill-group"><h3>AI &amp; blockchain</h3><p>LLM evaluation, AI integration, Solidity, Ethers.js, Hardhat</p></div></div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="section-head"><span class="section-label">04 / Contact</span><h2 id="contact-title">Let’s talk.</h2></div>
+        <p>If you’re hiring a junior developer or want to talk about one of these projects, email me.</p>
+        <div class="actions"><a class="button contact-email" href="mailto:geetbari18@gmail.com">geetbari18@gmail.com</a><a class="button secondary" href="assets/Geet_Bari_Resume.pdf" download>Download resume (PDF)</a></div>
+        <div class="text-links"><a href="https://github.com/GeetBari" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/geetbari/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+      </section>
+    </div>
   </main>
+  <footer><div class="wrap"><span>© 2026 Geet Bari</span><span>Mumbai, India</span></div></footer>
   <script>
     (() => {
-      if (matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+      const examples = {
+        app: { command:'Open notepad', reply:'Opening notepad.', detail:'On Windows, Iris launches Notepad through its app-opening action.' },
+        note: { command:'Take a note saying buy milk', reply:'I saved your note and opened it in Notepad: buy milk', detail:'Iris saves a text file in its local notes folder and opens it in Notepad.' },
+        timer: { command:'Set a timer for five minutes', reply:'Timer set for 5 minutes and 0 seconds.', detail:'Iris starts a 300-second timer. The assistant needs to keep running until it finishes.' }
+      };
+      const controls = document.querySelector('.demo-controls');
+      controls.addEventListener('click', event => {
+        const button = event.target.closest('button[data-example]');
+        if (!button) return;
+        const example = examples[button.dataset.example];
+        controls.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        document.getElementById('demo-command').textContent = `“${example.command}”`;
+        document.getElementById('demo-reply').textContent = `“${example.reply}”`;
+        document.getElementById('demo-detail').textContent = example.detail;
+      });
+      controls.hidden = false;
       const glow = document.querySelector('.cursor-glow');
-      let x = innerWidth / 2, y = innerHeight / 2, frame;
-      const paint = () => { glow.style.transform = `translate3d(${x - 230}px, ${y - 230}px, 0)`; frame = null; };
-      addEventListener('pointermove', event => {
-        x = event.clientX; y = event.clientY; glow.classList.add('active');
-        if (!frame) frame = requestAnimationFrame(paint);
+      const motionAllowed = matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)');
+      let x = 0, y = 0, frame = null;
+      const hideGlow = () => {
+        if (frame !== null) cancelAnimationFrame(frame);
+        frame = null;
+        glow.classList.remove('active');
+      };
+      document.addEventListener('pointermove', event => {
+        if (!motionAllowed.matches || event.pointerType === 'touch') return;
+        x = event.clientX; y = event.clientY;
+        if (frame === null) frame = requestAnimationFrame(() => {
+          glow.style.transform = `translate3d(${x - 230}px,${y - 230}px,0)`;
+          glow.classList.add('active');
+          frame = null;
+        });
       }, { passive:true });
-      addEventListener('pointerleave', () => glow.classList.remove('active'));
+      document.documentElement.addEventListener('pointerleave', hideGlow);
+      addEventListener('blur', hideGlow);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) hideGlow(); });
+      motionAllowed.addEventListener('change', hideGlow);
     })();
   </script>
 </body>
