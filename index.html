@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Geet Bari, full-stack and backend developer in Mumbai. Explore Iris, a local Windows voice assistant, other projects, and my resume.">
   <meta name="theme-color" content="#0c0c0e">
-  <title>Geet Bari — Developer</title>
+  <title>Geet Bari — The developer studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -139,51 +139,54 @@
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .cursor-glow { display:none; transition:none; } }
     @media (hover:none), (pointer:coarse) { .cursor-glow { display:none; } }
   </style>
+  <link rel="stylesheet" href="studio.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="lighting-layer" aria-hidden="true"><div class="cursor-glow"></div></div>
-  <header><div class="wrap nav"><a class="brand" href="#top">GEET BARI</a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></div></header>
+  <header><div class="wrap nav"><a class="brand" href="#top">GB<span class="brand-dot">.</span> <span class="brand-caption">THE DEVELOPER STUDIO</span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><button class="light-switch" type="button" aria-label="Warm lighting" aria-pressed="true" hidden><span class="switch-track" aria-hidden="true"></span><span class="switch-label">Lights on</span></button></nav></div></header>
   <main id="main-content" tabindex="-1">
     <div class="hero-shell" id="top">
       <div class="lamp lamp-left" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
       <div class="lamp lamp-right" aria-hidden="true"><span class="light"></span><span class="bulb"></span></div>
       <section class="hero wrap" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Developer / Mumbai, India</p>
+          <p class="eyebrow">A small studio on the internet / Mumbai, India</p>
           <h1 id="hero-title">Geet <em>Bari.</em></h1>
-          <p class="role">Full-stack &amp; backend developer</p>
-          <p class="intro">I build web applications and experiment with local AI. Currently working on <a href="#iris">Iris</a>, a voice assistant for Windows.</p>
+          <p class="role">Code, curiosity.<br>A little late-night tinkering.</p>
+          <p class="intro">I’m a full-stack &amp; backend developer. I build web applications and tools I want to use myself. Lately, that’s <a href="#iris">Iris</a>—a Windows voice assistant that can help run a coding workflow.</p>
           <div class="actions"><a class="button" href="#work">Explore my work</a><a class="button secondary" href="assets/Geet_Bari_Resume.pdf?v=8570b1ca29e0" download>Download resume (PDF)</a></div>
         </div>
-        <aside class="availability"><strong>Open to junior developer roles</strong><p>Interested in full-stack, backend, AI integration, and Web3.</p></aside>
+        <aside class="studio-note"><p class="section-label">ON MY DESK / 01</p><a class="desk-title" href="#iris">Hey, Iris<span aria-hidden="true">↗</span></a><p>From opening apps<br>to running project workflows.</p><div class="desk-command"><span aria-hidden="true">›</span> Run tests for Iris</div><a class="desk-link" href="#iris">Explore what I’m building ↓</a><div class="availability"><strong>Open to junior developer roles</strong><p>Full-stack · Backend · AI integration</p></div></aside>
       </section>
     </div>
     <div class="wrap">
       <section class="section" id="work" aria-labelledby="work-title">
-        <div class="section-head"><p class="section-label">01 / Work</p><h2 id="work-title">Selected projects</h2></div>
+        <div class="section-head"><p class="section-label">01 / Selected work</p><h2 id="work-title">Off the drawing board.</h2></div>
         <article class="iris-feature" id="iris" aria-labelledby="iris-title">
           <div>
-            <p class="project-note">Featured / In development</p>
+            <p class="project-note">THE CURRENT OBSESSION / WINDOWS · IN DEVELOPMENT</p>
             <h3 class="iris-title" id="iris-title">Iris</h3>
-            <p class="iris-summary">A voice assistant that runs on your Windows PC.</p>
-            <p class="iris-description">Open apps, take notes, set timers, and search the web with a spoken command. Whisper handles speech recognition; Qwen interprets requests locally.</p>
-            <p class="iris-description">Iris maps requests to a limited set of actions. Speech and language processing stay on the computer; web searches still need an internet connection.</p>
-            <p class="stack">Python · Whisper · Qwen · Ollama</p>
-            <div class="text-links"><a href="https://github.com/GeetBari/iris" target="_blank" rel="noopener noreferrer">View source</a><a href="https://github.com/GeetBari/iris#setup-on-another-windows-pc" target="_blank" rel="noopener noreferrer">Setup guide</a></div>
+            <p class="iris-summary">Less switching tools.<br>More getting things done.</p>
+            <p class="iris-description">Say “Hey Iris” to open an app, start a coding session, or run a saved test command. A local dashboard brings project profiles, job output, and session history into one place.</p>
+            <p class="iris-description">Whisper and Qwen process speech and requests locally. Optional coding agents use their own accounts and may send project context to their providers.</p>
+            <p class="stack">Python · Whisper · Vosk · Qwen · Ollama</p>
+            <div class="text-links"><a href="https://github.com/GeetBari/iris" target="_blank" rel="noopener noreferrer">Explore the repository ↗</a><a href="https://github.com/GeetBari/iris#setup" target="_blank" rel="noopener noreferrer">Setup &amp; limitations ↗</a></div>
           </div>
           <div class="walkthrough" aria-labelledby="demo-title">
-            <h4 id="demo-title">Command walkthrough</h4>
-            <p class="demo-disclaimer">Illustrated examples from Iris. This is a preview, not a running assistant.</p>
-            <div class="demo-controls" role="group" aria-label="Choose an Iris command example" hidden><button type="button" data-example="app" aria-pressed="true" aria-controls="demo-result">Open an app</button><button type="button" data-example="note" aria-pressed="false" aria-controls="demo-result">Take a note</button><button type="button" data-example="timer" aria-pressed="false" aria-controls="demo-result">Set a timer</button></div>
+            <h4 id="demo-title">A request. A workflow.</h4>
+            <p class="demo-disclaimer">Interactive illustration—not a live assistant or a recorded run.</p>
+            <div class="demo-controls" role="group" aria-label="Choose an Iris workflow" hidden><button type="button" data-example="coding" aria-pressed="true" aria-controls="demo-result">Start coding</button><button type="button" data-example="tests" aria-pressed="false" aria-controls="demo-result">Run tests</button><button type="button" data-example="agent" aria-pressed="false" aria-controls="demo-result">Ask Codex</button></div>
             <div class="demo-result" id="demo-result" aria-live="polite" aria-atomic="true">
-              <p class="demo-label">You say</p><p class="demo-command" id="demo-command">“Open notepad”</p>
-              <p class="demo-label">Iris responds</p><p class="demo-reply" id="demo-reply">“Opening notepad.”</p>
-              <p class="demo-detail" id="demo-detail">On Windows, Iris launches Notepad through its app-opening action.</p>
+              <p class="demo-label">01 / After “Hey Iris”</p><p class="demo-command" id="demo-command">“Start coding on Iris with VS Code and Codex”</p>
+              <p class="demo-label" id="demo-stage">02 / Saved project profile</p><p class="demo-reply" id="demo-reply">Find the project folder and launch the configured tools.</p>
+              <p class="demo-label">03 / What happens next</p><p class="demo-detail" id="demo-detail">VS Code and Codex open in the saved project folder when installed and available. Launching tools does not submit an agent task.</p>
             </div>
             <p class="demo-footnote">No microphone access or apps are opened by this preview.</p>
           </div>
         </article>
+        <figure class="dashboard-preview"><div class="window-bar"><span><i></i><i></i><i></i></span><span>IRIS / CONTROL CENTER</span><a href="assets/iris-dashboard.png" target="_blank" rel="noopener">Full view ↗</a></div><a href="assets/iris-dashboard.png" target="_blank" rel="noopener" aria-label="Open full Iris dashboard screenshot"><img src="assets/iris-dashboard.png" width="1365" height="850" loading="lazy" decoding="async" alt="Iris Control Center showing voice controls and an example session with coding and test commands."></a><figcaption>The actual Iris interface, with sample activity from the project’s README. Not a live session.</figcaption></figure>
+        <div class="build-notes"><div><p class="section-label">THE ENGINEERING BIT</p><h3>Voice and dashboard.<br>One task service.</h3></div><div><p>Both interfaces share a local service that owns running jobs, output, and cancellation. Closing the dashboard doesn’t end the work.</p><details><summary>Where the boundaries are</summary><p>Codex tasks need approval. File-changing requests require dashboard review; saved project commands can run by voice once the profile is approved and saved. Restarting the task service loses control of active jobs, and file-editing agent tasks still need end-to-end validation.</p></details></div></div>
         <div class="other-work">
           <article class="project"><span class="project-number" aria-hidden="true">02</span><div><h3>Vyoma Bank</h3><p>A hybrid Web2/Web3 banking prototype with off-chain identity records, on-chain KYC hashes, and role-based loan approvals.</p><p class="stack">Next.js · Solidity · Prisma · PostgreSQL</p></div><a href="https://github.com/GeetBari/VYOMA-Banking-Website" target="_blank" rel="noopener noreferrer" aria-label="View Vyoma Bank source">View source</a></article>
           <article class="project"><span class="project-number" aria-hidden="true">03</span><div><h3>Credit Card Recommendation System</h3><p>Credit-card recommendations based on income and spending behaviour, with a React interface and a Flask API.</p><p class="stack">React · Flask · XGBoost · PostgreSQL</p></div><a href="https://github.com/GeetBari/Credit-Card-Recommendation-System" target="_blank" rel="noopener noreferrer" aria-label="View Credit Card Recommendation System source">View source</a></article>
@@ -191,7 +194,7 @@
         </div>
       </section>
       <section class="section" id="about" aria-labelledby="about-title">
-        <div class="section-head"><p class="section-label">02 / About</p><h2 id="about-title">A little about me</h2></div>
+        <div class="section-head"><p class="section-label">02 / Away from the editor</p><h2 id="about-title">There’s a rhythm to it.</h2></div>
         <div class="about-grid"><div class="about-copy"><p>I’m an Information Technology graduate based in Mumbai. My projects span web development, blockchain, and local AI, from banking workflows to an assistant for everyday tasks.</p><p>Outside software, I play tabla. I completed Tabla Visharad through Gandharva Mahavidyalaya and led a team organising musical events for Revive Fest.</p></div><dl class="about-facts"><div><dt>AI Intern · Prettiflow</dt><dd>Evaluated LLM outputs, supported API testing and integration, and researched models for performance comparisons.</dd></div><div><dt>B.E. Information Technology · 2026</dt><dd>Terna Engineering College, Navi Mumbai</dd></div></dl></div>
       </section>
       <section class="section" id="skills" aria-labelledby="skills-title">
@@ -207,12 +210,13 @@
     </div>
   </main>
   <footer><div class="wrap"><span>© 2026 Geet Bari</span><span>Mumbai, India</span></div></footer>
+  <script src="studio.js" defer></script>
   <script>
     (() => {
       const examples = {
-        app: { command:'Open notepad', reply:'Opening notepad.', detail:'On Windows, Iris launches Notepad through its app-opening action.' },
-        note: { command:'Take a note saying buy milk', reply:'I saved your note and opened it in Notepad: buy milk', detail:'Iris saves a text file in its local notes folder and opens it in Notepad.' },
-        timer: { command:'Set a timer for five minutes', reply:'Timer set for 5 minutes and 0 seconds.', detail:'Iris starts a 300-second timer. The assistant needs to keep running until it finishes.' }
+        coding: { command:'Start coding on Iris with VS Code and Codex', stage:'02 / Saved project profile', reply:'Find the project folder and launch the configured tools.', detail:'VS Code and Codex open in the saved project folder when installed and available. Launching tools does not submit an agent task.' },
+        tests: { command:'Run tests for Iris', stage:'02 / Managed job', reply:'Run the test command from the approved, saved profile.', detail:'Output and exit status appear in job history. After the wake word, ask “Did they pass?” to check the recent task. No tests run in this preview.' },
+        agent: { command:'Ask Codex for Iris to explain the project structure', stage:'02 / Review before execution', reply:'Prepare a read-only agent request for approval.', detail:'After approval, streamed activity and the final response appear in the dashboard. File-changing requests require dashboard review. Optional Codex tasks are not offline.' }
       };
       const controls = document.querySelector('.demo-controls');
       controls.addEventListener('click', event => {
@@ -221,8 +225,9 @@
         const example = examples[button.dataset.example];
         controls.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
         document.getElementById('demo-command').textContent = `“${example.command}”`;
-        document.getElementById('demo-reply').textContent = `“${example.reply}”`;
+        document.getElementById('demo-reply').textContent = example.reply;
         document.getElementById('demo-detail').textContent = example.detail;
+        document.getElementById('demo-stage').textContent = example.stage;
       });
       controls.hidden = false;
       const glow = document.querySelector('.cursor-glow');
@@ -234,7 +239,7 @@
         glow.classList.remove('active');
       };
       document.addEventListener('pointermove', event => {
-        if (!motionAllowed.matches || event.pointerType === 'touch') return;
+        if (!motionAllowed.matches || event.pointerType === 'touch' || document.body.classList.contains('lights-off')) return;
         x = event.clientX; y = event.clientY;
         if (frame === null) frame = requestAnimationFrame(() => {
           glow.style.transform = `translate3d(${x - 230}px,${y - 230}px,0)`;
