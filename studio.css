@@ -54,6 +54,19 @@ details p { margin:10px 0 0; }
 .project { padding-block:34px; }
 .project h3 { font:400 1.6rem var(--serif); }
 .about-copy { font-size:1.1rem; }
+.beyond-code { margin-top:24px; padding:28px 24px; border-top:1px solid #75613b; border-bottom:1px solid #75613b; background:#d8b46505; display:grid; grid-template-columns:150px minmax(0,1fr); gap:22px 28px; align-items:center; }
+.beyond-heading { grid-column:1/-1; display:flex; justify-content:space-between; align-items:baseline; gap:20px; }
+.beyond-heading .section-label { margin:0; }
+.beyond-heading h2 { font-size:clamp(2rem,4vw,2.7rem); }
+.tabla-art { color:var(--gold); background:radial-gradient(ellipse at center,#d8b4650d,transparent 70%); text-align:center; }
+.tabla-art svg { display:block; width:100%; max-width:150px; margin:auto; }
+.beyond-copy>.section-label { margin-bottom:8px; }
+.beyond-copy h3 { margin:0 0 6px; color:var(--ink); font:400 1.8rem/1.2 var(--serif); }
+.beyond-copy h3 span { display:inline-block; margin-left:12px; color:var(--gold); font:.7rem var(--mono); vertical-align:middle; }
+.tabla-institution { font-size:.85rem; margin-bottom:0; }
+.creative-credentials { display:grid; grid-template-columns:1.2fr 1fr; gap:24px; margin:14px 0 0; }
+.creative-credentials dt { color:var(--gold); font-size:.8rem; margin-bottom:6px; }
+.creative-credentials dd { margin:0; color:var(--muted); font-size:.8rem; }
 .contact h2 { font-size:clamp(3rem,7vw,5rem); }
 .lights-off .lamp .light,.lights-off .hero-shell::before,.lights-off .cursor-glow { opacity:0; }
 .lights-off .lamp .bulb { background:#68583a; box-shadow:none; }
@@ -70,6 +83,13 @@ details p { margin:10px 0 0; }
  nav { gap:18px; }
 }
 @media(max-width:680px) {
+ .beyond-code { grid-template-columns:56px minmax(0,1fr); gap:20px 12px; padding:24px 14px; align-items:start; }
+ .beyond-heading { display:block; }
+ .beyond-heading .section-label { margin-bottom:8px; }
+ .tabla-art { margin-top:20px; }
+ .beyond-copy h3 { font-size:1.55rem; }
+ .beyond-copy h3 span { display:block; margin:7px 0 0; }
+ .creative-credentials { grid-template-columns:1fr; gap:12px; }
  .nav { gap:6px; }
  .brand { font-size:1.35rem; }
  .brand-caption { display:inline-block; max-width:none; font-size:.55rem; }
